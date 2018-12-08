@@ -33,7 +33,7 @@ $(document).ready(function(){
 
             $.ajax({
                 //Insert YOUR API Key after the '=' inside the single quotes.
-                url:'https://api.themoviedb.org/3/search/movie?api_key=INSERT-HERE',
+                url:'https://api.themoviedb.org/3/search/movie?api_key=20c787c45d3ca5f7e749dd4a5a88569c',
                 data: query
             })
             
@@ -59,6 +59,8 @@ $(document).ready(function(){
                  *********************************Insert Code Below********************************************/                
                 
                 
+                $("#overview").html(json.results[0].overview);
+                
                 
 
                 /***********************Retrieve Movie Release Date from Server & Add to HTML Document***********
@@ -73,6 +75,9 @@ $(document).ready(function(){
                  
                  *********************************Insert Code Below********************************************/               
 
+                    
+                $("#release_date").html(json.results[0].release_date);                
+            
 
 
 
@@ -89,7 +94,9 @@ $(document).ready(function(){
                  *********************************Insert Code Below********************************************/   
 
   
-
+                $("#popularity").html(json.results[0].popularity);
+                
+                
                 
                  /*****************Retrieve Movie Original Language from Server & Add to HTML Document***********
                  TASK #9:  
@@ -102,6 +109,9 @@ $(document).ready(function(){
                  3.  Use the example above where the Movie Title was retrieved to complete this step!
                  
                  *********************************Insert Code Below********************************************/                 
+
+
+                $("#original_language").html(json.results[0].original_language);
 
 
 
